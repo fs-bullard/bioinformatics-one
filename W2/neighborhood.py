@@ -58,34 +58,5 @@ if __name__ == "__main__":
     output = generate_neighbourhood(pattern, d)
 
     print(convert_list_to_string_output(output))
-
-    """
-    Pattern: ACGT
-    Neighbourhood:
-    d = 0:
-    ACGT
-    1
-
-    d = 1:
-    CCGT
-    GCGT
-    TCGT
-    ...
-    3^0*4 = 12
-
-    d = 2:
-    3^2*12 = 108
-
-    d = 3
-    3^3*4 = 108
-
-    so there are 228 4-mers in the 3-negihborhood of ACGT
-    """
-    nbh = generate_neighbourhood("ACGT", 3)
-
-    for i, el in enumerate(nbh):
-        if el in nbh[:i] + nbh[i+1:]:
-            print(True)
-    print(len(generate_neighbourhood("ACGT", 3)))
     
 
