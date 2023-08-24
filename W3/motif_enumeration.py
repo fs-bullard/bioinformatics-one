@@ -44,48 +44,48 @@ def motif_enumeration_bf(dna: list, k: int, d: int) -> set:
 
 if __name__ == "__main__":
     dna = [
-        "GGCTGAGACTCCTGAGTTGGTACTT",
-        "GATGGCGGCAGATGGAGGTTGGGTT", 
-        "CTAGCCTTGAGTTGTGCGTACCGAT", 
-        "GTTGGAGCGCTACAGAAATTATGCA",
-        "TGAGAGATGTGGGAATGGTGAGGCA",
-        "GCTGGCGCAATTTCGGTCCAAGATT"]
+        "TCTATGGGCTCGAAGCATTTCTGAC",
+        "CAGGTATATAAGGTCAATGTGGCCT", 
+        "TATGCTTACCTACGATAACATATTT", 
+        "AATTTCATCTACCTTTATCCAATCT",
+        "CACTTTGTCCGATGTGCCTCACCGA",
+        "AGTGCGATATCGCTCCTCGCATTGG"]
     k = 5
     d = 2
 
     patterns = motif_enumeration_bf(dna, k, d)
 
-    # print(convert_list_to_string_output(patterns))
-    import numpy as np
-    probs = np.zeros((12))
-    probs[0] = 0.3
-    probs[1] = 0.4
-    probs[2] = 1
-    probs[3] = 1
-    probs[4] = 0.1
-    probs[5] = 0.1
-    probs[6] = 0.1
-    probs[7] = 0.5
-    probs[8] = 0.2
-    probs[9] = 0.3
-    probs[10] = 0.6
-    probs[11] = 0.4
-    entropy = -sum(probs*np.log2(probs))
-    entropy = np.zeros((12))
+    print(convert_list_to_string_output(patterns))
+    # import numpy as np
+    # probs = np.zeros((12))
+    # probs[0] = 0.3
+    # probs[1] = 0.4
+    # probs[2] = 1
+    # probs[3] = 1
+    # probs[4] = 0.1
+    # probs[5] = 0.1
+    # probs[6] = 0.1
+    # probs[7] = 0.5
+    # probs[8] = 0.2
+    # probs[9] = 0.3
+    # probs[10] = 0.6
+    # probs[11] = 0.4
+    # entropy = -sum(probs*np.log2(probs))
+    # entropy = np.zeros((12))
 
-    entropy[0] = 0.2*np.log2(0.2) + 0.1*np.log2(0.1) + 0.7*np.log2(0.7)
-    entropy[1] = 0.4*np.log2(0.2) + 0.6*np.log2(0.6)
-    entropy[2] = 0
-    entropy[3] = 0
-    entropy[4] = 0.1*np.log2(0.1) + 0.9*np.log2(0.9)
-    entropy[5] = 0.1*np.log2(0.1) + 0.9*np.log2(0.9)
-    entropy[6] = 0.1*np.log2(0.1) + 0.9*np.log2(0.9)
-    entropy[7] = 0.4*np.log2(0.4) + 0.1*np.log2(0.1) + 0.5*np.log2(0.5)
-    entropy[8] = 0.2*np.log2(0.1) + 0.8*np.log2(0.8)
-    entropy[9] = 0.2*np.log2(0.2) + 0.1*np.log2(0.1) + 0.7*np.log2(0.7)
-    entropy[10] = 0.6*np.log2(0.3) + 0.4*np.log2(0.4)
-    entropy[11] = 0.4*np.log2(0.4) + 0.6*np.log2(0.6)
+    # entropy[0] = 0.2*np.log2(0.2) + 0.1*np.log2(0.1) + 0.7*np.log2(0.7)
+    # entropy[1] = 0.4*np.log2(0.2) + 0.6*np.log2(0.6)
+    # entropy[2] = 0
+    # entropy[3] = 0
+    # entropy[4] = 0.1*np.log2(0.1) + 0.9*np.log2(0.9)
+    # entropy[5] = 0.1*np.log2(0.1) + 0.9*np.log2(0.9)
+    # entropy[6] = 0.1*np.log2(0.1) + 0.9*np.log2(0.9)
+    # entropy[7] = 0.4*np.log2(0.4) + 0.1*np.log2(0.1) + 0.5*np.log2(0.5)
+    # entropy[8] = 0.2*np.log2(0.1) + 0.8*np.log2(0.8)
+    # entropy[9] = 0.2*np.log2(0.2) + 0.1*np.log2(0.1) + 0.7*np.log2(0.7)
+    # entropy[10] = 0.6*np.log2(0.3) + 0.4*np.log2(0.4)
+    # entropy[11] = 0.4*np.log2(0.4) + 0.6*np.log2(0.6)
 
-    print(sum(entropy))
+    # print(sum(entropy))
 
 
