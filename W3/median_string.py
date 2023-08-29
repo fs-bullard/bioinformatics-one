@@ -4,14 +4,16 @@ nucleotides = ["A", "T", "G", "C"]
 def median_string(dna: list[str], k: int) -> str:
     d = len(dna) * len(dna[0])
     kmers = generate_kmers(k)
+    medians = []
 
     for kmer in kmers:
         d_kmer = calculate_distance(kmer, dna)
-        if d_kmer < d:
+        if d_kmer <= d:
             d = d_kmer
-            median = kmer
+          
+            medians.append((d, kmer))
 
-    return median
+    return [median[1] for median in medians if median[0] == d]
 
 def calculate_distance(pattern: str, dna: list[str]) -> int:
     k = len(pattern)
